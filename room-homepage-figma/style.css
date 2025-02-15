@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+    --white: #ffffff; 
+    --black: #000000;
+    --grey: #A0A0A0;
+}
+body {
+    font-family: "League Spartan", serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.33px;
+    color: var(--grey);
+}
+h1 {
+    color: var(--black);
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -2px;
+}
+h2 {
+    font-size: 16px;
+    color: var(--black);
+    line-height: 1.5;
+    letter-spacing: 6.67px;
+}
+.header {
+    padding: 64px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+.logo-header {
+    margin-right: 56px;
+}
+.header-list {
+    display: flex;
+    gap: 31px;
+    color: var(--white);
+}
+.header-link {
+    position: relative; 
+    display: inline-block; 
+    color: var(--white); 
+    text-decoration: none; 
+    cursor: pointer;
+}
+
+.header-link::after {
+    content: "";
+    position: absolute; 
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 0; 
+    height: 2px; 
+    background-color: white; 
+    transition: width 0.3s ease; 
+}
+
+.header-link:hover::after {
+    width: 16px; 
+}
+.burger {
+    display: none;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.main-img {
+    flex: 1 1 58%;
+    height: 100%;
+}
+.img-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main-top {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 100%;    
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+.main-contant {
+    position: relative; 
+    flex: 1 1 42%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.contant-main {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+}
+.main-top__link {
+    margin-top: 8px;
+    font-size: 15px;
+    color: var(--black);
+    line-height: 1;
+    letter-spacing: 12.5px;
+    position: relative;
+}
+.main-top__link::after{
+    content: '';
+    position: absolute;
+    background-image: url('/room-homepage/img/icon/line.svg');
+    background-repeat: no-repeat;
+    height: 12px;
+    width: 40px;
+    padding-left: 30px;
+    display: inline-block;
+}
+.buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+.main-top_btn-left,
+.main-top_btn-right {
+    padding: 28px 34px;
+    background-color: var(--black);
+    margin:0 -2px;
+    cursor: pointer;
+}
+.main-bottom {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.main-bottom__img-left{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 33%;
+}
+.main-bottom__img-right {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(42% - 165px);
+}
+.main-bottom__img-left img,
+.main-bottom__img-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main-bottom__img-right img {
+    justify-content: flex-end;
+}
+.main-bottom__contant {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 33%;
+}
+.bottom__contant {
+    width: 484px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+@media (max-width: 1573px) {
+    .bottom__contant,
+    .contant-main {
+        width: 311px;
+    }
+    .main-top_title{
+        font-size: 40px;
+    }
+    .main-top_btn-left, .main-top_btn-right {
+        padding: 20px 23px;
+    }
+    .main-bottom__img-right {
+        flex-basis: calc(42% - 127px);
+    }
+    .main-contant {
+        justify-content: flex-start;
+    }
+    .contant-main, .bottom__contant {
+        width: 100%;
+        margin: 40px 32px;
+    }
+    .bottom__contant {
+        padding: 20px;
+    }
+}
+@media (max-width: 1067px) {
+    .main {
+        flex-direction: column;
+        width: 100%; 
+        height: 100%;
+    }
+    .main-contant {
+        width: 100%;
+    }
+    .main-img {
+        /* flex: 1 1 58%; */
+        height: auto;
+        width: 100%;
+    }
+    .main-top {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+    }
+    .main-bottom {
+        flex-direction: column;
+    }
+    .buttons {
+        position: absolute;
+        right: 0;
+        top: -84px;
+        bottom: auto;
+        left: auto; 
+    }
+}
+@media (max-width: 640px) {
+    .header {
+        padding: 40px 24px;
+    }
+}
+@media (max-width: 403px) {
+    .header{
+        padding: 40px 24px;
+        width: 100%;
+        
+    }
+    .logo-header{
+        margin: 0 auto;
+    }
+    .burger {
+        display: block;
+
+    }
+    .header-list {
+        display: none;
+    }
+}
